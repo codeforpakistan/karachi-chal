@@ -1,13 +1,15 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
-import Base64 from 'base64-js';
 import MarkdownIt from 'markdown-it';
-import { maybeShowApiKeyBanner } from './gemini-api-banner';
+
+
 import './style.css';
+
+
 
 // 🔥 FILL THIS OUT FIRST! 🔥
 // 🔥 GET YOUR GEMINI API KEY AT 🔥
 // 🔥 https://g.co/ai/idxGetGeminiKey 🔥
-let API_KEY = 'AIzaSyCjbY4B_GTcUFZVFPvxz1GQFTP-7XA3Vsc';
+let API_KEY = import.meta.env.VITE_GEMINI_KEY
 
 let form = document.querySelector('form');
 let promptInput = document.querySelector('input[name="prompt"]');
@@ -19,18 +21,23 @@ form.onsubmit = async (ev) => {
 
   try {
     // Load the image as a base64 string
-    let imageUrl = form.elements.namedItem('chosen-image').value;
-    let imageBase64 = await fetch(imageUrl)
-      .then(r => r.arrayBuffer())
-      .then(a => Base64.fromByteArray(new Uint8Array(a)));
+    // let imageUrl = form.elements.namedItem('chosen-image').value;
+    // let imageBase64 = await fetch(imageUrl)
+    //   .then(r => r.arrayBuffer())
+    //   .then(a => Base64.fromByteArray(new Uint8Array(a)));
 
     // Assemble the prompt by combining the text with the chosen image
     let contents = [
       {
         role: 'user',
         parts: [
-          { inline_data: { mime_type: 'image/jpeg', data: imageBase64, } },
-          { text: promptInput.value }
+          // { inline_data: { mime_type: 'image/jpeg', data: imageBase64, } },
+          { text:  `You are a knowledgeable travel guide specializing in Karachi. 
+          When a visitor asks you about their upcoming trip using the 
+          variable "${promptInput.value}", provide a comprehensive response. 
+          Include detailed daily itineraries, top dining spots, and must-see attractions. 
+          Ensure you account for travel logistics, such as travel times and 
+          operational hours of venues.`, }
         ]
       }
     ];
@@ -38,7 +45,8 @@ form.onsubmit = async (ev) => {
     // Call the gemini-pro-vision model, and get a stream of results
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({
-      model: "gemini-pro-vision",
+      model: "gemini-pro",
+
       safetySettings: [
         {
           category: HarmCategory.HARM_CATEGORY_HARASSMENT,
@@ -62,4 +70,3 @@ form.onsubmit = async (ev) => {
 };
 
 // You can delete this once you've filled out an API key
-maybeShowApiKeyBanner(API_KEY);

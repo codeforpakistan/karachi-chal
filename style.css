@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   --accent-color: #076EFF;
   color: #202124;
+  background-color: lightgoldenrodyellow;
 }
 
 main,
@@ -15,22 +16,12 @@ main,
   border-radius: 20px;
 }
 
-.api-key-banner {
-  background-color: #FFDDB7;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-.api-key-banner a {
-  color: var(--accent-color);
-}
-
 * {
   outline-color: var(--accent-color);
 }
 
 main {
-  background-color: #fff;
+  background-color: lightsteelblue;
 }
 
 h1 {
@@ -44,9 +35,9 @@ h1 {
 h1::before {
   content: '';
   display: inline-block;
-  background: url(gemini.png);
-  width: 40px;
-  height: 40px;
+  /* background: url(gemini.png); */
+  /* width: 40px;
+  height: 40px; */
   background-size: cover;
 }
 
