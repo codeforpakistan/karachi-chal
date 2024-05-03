@@ -13,7 +13,6 @@ let output = document.querySelector('.output');
 
 form.onsubmit = async (ev) => {
   ev.preventDefault();
-  output.textContent = 'Generating...';
 
   try {
     
@@ -33,7 +32,7 @@ form.onsubmit = async (ev) => {
       }
     ];
 
-    // Call the gemini-pro-vision model, and get a stream of results
+    // Call the gemini-pro model, and get a stream of results
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({
       model: "gemini-pro",
