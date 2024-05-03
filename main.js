@@ -20,18 +20,13 @@ form.onsubmit = async (ev) => {
   output.textContent = 'Generating...';
 
   try {
-    // Load the image as a base64 string
-    // let imageUrl = form.elements.namedItem('chosen-image').value;
-    // let imageBase64 = await fetch(imageUrl)
-    //   .then(r => r.arrayBuffer())
-    //   .then(a => Base64.fromByteArray(new Uint8Array(a)));
+    
 
     // Assemble the prompt by combining the text with the chosen image
     let contents = [
       {
         role: 'user',
         parts: [
-          // { inline_data: { mime_type: 'image/jpeg', data: imageBase64, } },
           { text:  `You are a knowledgeable travel guide specializing in Karachi. 
           When a visitor asks you about their upcoming trip using the 
           variable "${promptInput.value}", provide a comprehensive response. 
