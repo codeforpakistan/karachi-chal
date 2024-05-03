@@ -17,7 +17,7 @@ Visit the Karachi Chal web app: [Insert link when live]
 Fill out the simple form with your trip details and interests.
 Get your personalized Karachi itinerary in minutes!
 
-# #How to Contribute
+## How to Contribute
 
 Karachi Chal is an open-source project that thrives on community contributions! Here's how you can help:
 
