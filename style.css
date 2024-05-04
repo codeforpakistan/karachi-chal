@@ -205,3 +205,14 @@ button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
 }
+
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+}
