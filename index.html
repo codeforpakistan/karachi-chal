@@ -5,28 +5,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karachi Chal</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+>
 </head>
 
 <body>
+  <nav class="level">
+    <p class="level-item has-text-centered">
+      <img
+        src="Karachi Chal (1).svg"
+        alt=""
+        style="height: 256px"
+      />
+    </p>
+  </nav>
   <main>
-      <img src="Karachi Chal (1).svg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"/>
-      <h1>Your AI-Powered Itinerary Guide for Karachi</h1>
-      <form>
-        <div class="prompt-box">
-          <label>
-            <input name="prompt" placeholder="Enter itenerary and what you like to do here" type="text"
-              value="">
-          </label>
-          <button type="submit">Go</button>
+    <div class="container is-max-desktop">
+      <section class="section">
+        
+        <form>
+          <div class="box is-clearfix">
+            <div class="field">
+              <div class="control">
+                <input
+  class="input is-large"
+  type="text"
+  name="prompt" placeholder="Enter itenerary and what you like to do here" type="text"
+              value=""
+/>
+              </div>
+            </div>
+        <!-- <div class="is-pulled-right"> -->
+            <button type="submit" class="button is-info is-pulled-right">Lets Go!</button>
+        <!-- </div> -->
         </div>
       </form>
-      <p class="output"></p>
+    </section>
+  
+
+    <section class="section">
+      <!-- <p class="output"></p> -->
+      <article class="message is-info">
+        <div class="message-header">
+          <p>Your Itenerary</p>
+        </div>
+        <div class="message-body output">
+          <div class="skeleton-block"></div>
+        </div>
+      </article>
+    </section>
+    </div>
   </main>
-<footer class="sticky-footer">
-  <p>Karachi Chal is a project of <a href="https://codeforpakistan.org">Code for Pakistan</a> built with  ❤️ and the people of Karachi.</p>
-</footer>
-
-
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Karachi Chal</strong> built by <a href="https://codeforpakistan.org">Code For Pakistan</a> and the 
+        citizens of Karachi with ❤️. Powered by <a href="https://gemini.google.com">Google Gemini</a> ✨.
+      </p>
+    </div>
+  </footer>
   <script type="module" src="/main.js"></script>
 </body>
 </html>

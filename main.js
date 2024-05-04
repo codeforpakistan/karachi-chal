@@ -4,15 +4,21 @@ import MarkdownIt from 'markdown-it';
 import './style.css';
 
 
+
 // 🔥 https://g.co/ai/idxGetGeminiKey 🔥
 let API_KEY = import.meta.env.VITE_GEMINI_KEY
 
 let form = document.querySelector('form');
 let promptInput = document.querySelector('input[name="prompt"]');
 let output = document.querySelector('.output');
+let message = document.querySelector('.message');
+  
+message.style.display = 'none';
 
 form.onsubmit = async (ev) => {
   ev.preventDefault();
+
+  message.style.display = 'block'
 
   try {
     
