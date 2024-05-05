@@ -22,8 +22,6 @@ form.onsubmit = async (ev) => {
 
   try {
     
-    ga('send', 'event', 'generate_itinerary', 'submit', 'prompt');
-
 
 
     // Assemble the prompt by combining the text with the chosen image
